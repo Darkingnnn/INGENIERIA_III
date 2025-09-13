@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AgroSafeIA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background: #fafafa;
+        }
+
+        .panel-carrusel {
+            border: 2px solid #c9c9c9;
+            background: #fff;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-item h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* flechas personalizadas */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            display: none;
+            /* oculta las flechas default */
+        }
+
+        .carousel-control-prev i,
+        .carousel-control-next i {
+            font-size: 2rem;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" style="min-height:70px;">
+        <div class="container">
+            <a href="./index.html" class="navbar-brand fw-bold">AgroSafeIA</a>
+            <form class="d-none d-lg-flex ms-auto" style="max-width:350px; width:100%;">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input class="form-control" type="search" placeholder="Buscar">
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <div class="row">
+            <div class="col-xl-12">
+                <div id="carruselCentral" class="carousel slide panel-carrusel rounded-3 shadow-sm"
+                    data-bs-ride="carousel">
+                    <div class="carousel-inner active">
+                        <div class="text-center">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Identificador</th>
+                                        <th>Nombre de la regla</th>
+                                        <th>Descripción</th>
+                                        <th>Ámbito</th>
+                                        <th>Condiciones</th>
+                                        <th>Acciones o restricciones</th>
+                                        <th>Excepciones</th>
+                                        <th>Fuente</th>
+                                        <th>Prioridad</th>
+                                        <th>Fecha de creación y última actualización</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>RN-001</td>
+                                        <td>Disponibilidad de alojamientos</td>
+                                        <td>Un usuario solo puede reservar un alojamiento si hay disponibilidad en el
+                                            sistema.</td>
+                                        <td>Reservas de alojamiento</td>
+                                        <td>El sistema debe verificar la disponibilidad antes de confirmar la reserva.
+                                        </td>
+                                        <td>Si no hay disponibilidad, se ofrecerán fechas alternativas.</td>
+                                        <td>No aplica si el alojamiento permite sobreventa.</td>
+                                        <td>Políticas de reserva de hoteles</td>
+                                        <td>Alta</td>
+                                        <td>Creación: 01/03/2024 - Última actualización: 05/03/2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RN-002</td>
+                                        <td>Límite de reservas por usuario</td>
+                                        <td>Un usuario no puede tener más de 5 reservas activas al mismo tiempo.</td>
+                                        <td>Gestión de reservas</td>
+                                        <td>Se verifica la cantidad de reservas activas del usuario.</td>
+                                        <td>Si se alcanza el límite, se bloquean nuevas reservas hasta completar las
+                                            anteriores.</td>
+                                        <td>No aplica para usuarios con membresía premium.</td>
+                                        <td>Política de gestión de usuarios</td>
+                                        <td>Media</td>
+                                        <td>Creación: 02/03/2024 - Última actualización: 06/03/2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RN-003</td>
+                                        <td>Control de pagos pendientes</td>
+                                        <td>No se permite hacer nuevas reservas si el usuario tiene pagos pendientes.
+                                        </td>
+                                        <td>Gestión de pagos</td>
+                                        <td>El sistema verifica el estado de pagos antes de permitir nuevas reservas.
+                                        </td>
+                                        <td>Si hay pagos pendientes, se bloquean nuevas reservas y se notifica al
+                                            usuario.</td>
+                                        <td>No aplica si el usuario tiene un plan de financiamiento aprobado.</td>
+                                        <td>Política financiera de la plataforma</td>
+                                        <td>Alta</td>
+                                        <td>Creación: 01/03/2024 - Última actualización: 07/03/2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RN-004</td>
+                                        <td>Cancelaciones fuera de plazo</td>
+                                        <td>No se permite cancelar una reserva menos de 24 horas antes del check-in.
+                                        </td>
+                                        <td>Reservas</td>
+                                        <td>Se verifica la fecha actual con la fecha del check-in.</td>
+                                        <td>Si está fuera del plazo, no se permitirá la cancelación.</td>
+                                        <td>No aplica si la política del alojamiento lo permite.</td>
+                                        <td>Términos y condiciones del servicio</td>
+                                        <td>Media</td>
+                                        <td>Creación: 03/03/2024 - Última actualización: 08/03/2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RN-005</td>
+                                        <td>Modificación de itinerarios</td>
+                                        <td>Un usuario puede modificar su itinerario hasta 48 horas antes del inicio del
+                                            viaje.</td>
+                                        <td>Planificación de viajes</td>
+                                        <td>Se verifica la fecha actual con la fecha del viaje.</td>
+                                        <td>Si está dentro del tiempo permitido, se permite la modificación.</td>
+                                        <td>No aplica si la reserva incluye boletos de avión no reembolsables.</td>
+                                        <td>Política de modificaciones de ViajaPlus</td>
+                                        <td>Alta</td>
+                                        <td>Creación: 04/03/2024 - Última actualización: 08/03/2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RN-006</td>
+                                        <td>Descuentos por anticipación</td>
+                                        <td>Los usuarios que reserven con al menos 60 días de anticipación recibirán un
+                                            10% de descuento.</td>
+                                        <td>Reservas y promociones</td>
+                                        <td>Se valida la fecha de reserva en comparación con la fecha del viaje.</td>
+                                        <td>Si cumple el criterio, se aplica el descuento automáticamente.</td>
+                                        <td>No aplica en temporadas altas.</td>
+                                        <td>Política de descuentos de la empresa</td>
+                                        <td>Media</td>
+                                        <td>Creación: 02/03/2024 - Última actualización: 09/03/2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RN-007</td>
+                                        <td>Máximo de viajeros por reserva</td>
+                                        <td>Una reserva solo puede incluir un máximo de 10 personas.</td>
+                                        <td>Gestión de reservas</td>
+                                        <td>Se verifica la cantidad de personas antes de confirmar la reserva.</td>
+                                        <td>Si se excede el límite, se debe dividir en múltiples reservas.</td>
+                                        <td>No aplica si el usuario tiene una cuenta corporativa.</td>
+                                        <td>Reglamento de reservas grupales</td>
+                                        <td>Alta</td>
+                                        <td>Creación: 05/03/2024 - Última actualización: 09/03/2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RN-008</td>
+                                        <td>Restricción de edad para ciertos destinos</td>
+                                        <td>Algunos destinos solo pueden ser reservados por usuarios mayores de 18 años.
+                                        </td>
+                                        <td>Selección de destinos</td>
+                                        <td>Se verifica la edad del usuario antes de confirmar la reserva.</td>
+                                        <td>Si el usuario es menor de edad, se bloquea la reserva.</td>
+                                        <td>No aplica si el usuario viaja con un adulto responsable.</td>
+                                        <td>Normativa de seguridad de ViajaPlus</td>
+                                        <td>Alta</td>
+                                        <td>Creación: 06/03/2024 - Última actualización: 10/03/2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RN-009</td>
+                                        <td>Tiempo límite para completar una reserva</td>
+                                        <td>Una reserva se mantiene activa en el carrito por máximo 30 minutos sin pago.
+                                        </td>
+                                        <td>Procesos de reserva</td>
+                                        <td>Se mide el tiempo transcurrido desde que el usuario inicia la reserva.</td>
+                                        <td>Si excede el tiempo, se libera la disponibilidad.</td>
+                                        <td>No aplica para reservas con pago inmediato aprobado.</td>
+                                        <td>Política de reservas de ViajaPlus</td>
+                                        <td>Media</td>
+                                        <td>Creación: 07/03/2024 - Última actualización: 10/03/2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RN-010</td>
+                                        <td>Uso de códigos promocionales</td>
+                                        <td>Un código de descuento solo puede usarse una vez por usuario.</td>
+                                        <td>Promociones y descuentos</td>
+                                        <td>Se valida si el usuario ya utilizó el código previamente.</td>
+                                        <td>Si ya lo usó, el sistema bloquea la aplicación del descuento.</td>
+                                        <td>No aplica si el código es parte de una campaña de uso ilimitado.</td>
+                                        <td>Política de promociones y marketing</td>
+                                        <td>Media</td>
+                                        <td>Creación: 08/03/2024 - Última actualización: 11/03/2024</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <a href="./segundo.html">
+                                <button class="btn btn-primary">Regresar</button>
+                            </a>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">Juan Carlos Martinez M, Paul Furnieles, Juan Esteban
+                    chavarria</span>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AgroSafeIA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background: #fafafa;
+        }
+
+        .panel-carrusel {
+            border: 2px solid #c9c9c9;
+            background: #fff;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-item h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* flechas personalizadas */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            display: none;
+            /* oculta las flechas default */
+        }
+
+        .carousel-control-prev i,
+        .carousel-control-next i {
+            font-size: 2rem;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" style="min-height:70px;">
+        <div class="container">
+            <a href="./index.html" class="navbar-brand fw-bold">AgroSafeIA</a>
+            <form class="d-none d-lg-flex ms-auto" style="max-width:350px; width:100%;">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input class="form-control" type="search" placeholder="Buscar">
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <div class="row">
+            <div class="col-xl-12">
+                <div id="carruselCentral" class="carousel slide panel-carrusel rounded-3 shadow-sm"
+                    data-bs-ride="carousel">
+                    <div class="carousel-inner active">
+                        <div class="text-center">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Id Requisito</th>
+                                        <th>Nombre del Requisito</th>
+                                        <th>Descripción del Requisito</th>
+                                        <th>Usuario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>RU-001</td>
+                                        <td>Gestión de Tipo viaje</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los tipos de
+                                            viaje.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-002</td>
+                                        <td>Gestión de viajes</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los viajes.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-003</td>
+                                        <td>Gestión de Tipo transporte</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los tipos de
+                                            transporte.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-004</td>
+                                        <td>Gestión de Transporte</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los transportes.
+                                        </td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-005</td>
+                                        <td>Gestión de Departamento</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los
+                                            departamentos.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-006</td>
+                                        <td>Gestión de Ciudad</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar la ciudad.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-007</td>
+                                        <td>Gestión de Localidad</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar la localidad.
+                                        </td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-008</td>
+                                        <td>Gestión de Tipo alojamiento</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los tipos de
+                                            alojamiento.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-009</td>
+                                        <td>Gestión de Alojamiento</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los alojamientos.
+                                        </td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-010</td>
+                                        <td>Gestión de Tipo tour</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los tipos de
+                                            tour.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-011</td>
+                                        <td>Gestión de Tour</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los tours.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-012</td>
+                                        <td>Gestión de Clientes</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los clientes.
+                                        </td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-013</td>
+                                        <td>Gestión de Tipo cliente</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los tipos de
+                                            cliente.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-014</td>
+                                        <td>Gestión de Reserva</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar la reserva.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-015</td>
+                                        <td>Gestión de Registro de alojamiento</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los alojamientos.
+                                        </td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-016</td>
+                                        <td>Gestión de Tipo producto</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los tipos de
+                                            producto.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-017</td>
+                                        <td>Gestión de Producto</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los productos.
+                                        </td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-018</td>
+                                        <td>Gestión de Tipo pago</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los tipos de
+                                            pago.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-019</td>
+                                        <td>Gestión de Pago</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los pagos.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-020</td>
+                                        <td>Gestión de Actividades</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar las actividades.
+                                        </td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-021</td>
+                                        <td>Gestión de Comidas</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar las comidas.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-022</td>
+                                        <td>Gestión de Guía turístico</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar las guías
+                                            turísticas.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-023</td>
+                                        <td>Gestión de Paquetes turísticos</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los paquetes
+                                            turísticos.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-024</td>
+                                        <td>Gestión de Seguros de viaje</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar los seguros de
+                                            viaje.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-025</td>
+                                        <td>Gestión de Opiniones/Valoraciones</td>
+                                        <td>El sistema permitirá crear, consultar, modificar, y borrar las
+                                            opiniones/valoraciones.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-026</td>
+                                        <td>Gestión de Informes</td>
+                                        <td>El sistema generará informes de los tipos de viajes registrados, tipos de
+                                            alojamiento disponible, los tours y reservas.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RU-027</td>
+                                        <td>Gestión de Consultas</td>
+                                        <td>El sistema permitirá consultar opiniones y valoraciones de clientes,
+                                            actividades programadas, servicios adicionales adquiridos y reservas.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <a href="./segundo.html">
+                                <button class="btn btn-primary">Regresar</button>
+                            </a>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">Juan Carlos Martinez M, Paul Furnieles, Juan Esteban
+                    chavarria</span>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AgroSafeIA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background: #fafafa;
+        }
+
+        .panel-carrusel {
+            border: 2px solid #c9c9c9;
+            background: #fff;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-item h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* flechas personalizadas */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            display: none;
+            /* oculta las flechas default */
+        }
+
+        .carousel-control-prev i,
+        .carousel-control-next i {
+            font-size: 2rem;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" style="min-height:70px;">
+        <div class="container">
+            <a href="./index.html" class="navbar-brand fw-bold">AgroSafeIA</a>
+            <form class="d-none d-lg-flex ms-auto" style="max-width:350px; width:100%;">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input class="form-control" type="search" placeholder="Buscar">
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <div class="row">
+            <div class="col-xl-12">
+                <div id="carruselCentral" class="carousel slide panel-carrusel rounded-3 shadow-sm"
+                    data-bs-ride="carousel">
+                    <div class="carousel-inner active">
+                        <div class="text-center">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Id RF</th>
+                                        <th>Nombre del requisito</th>
+                                        <th>Descripción del Requisito</th>
+                                        <th>Usuario</th>
+                                        <th>Id RU</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>RF-001</td>
+                                        <td>Crear tipo viaje</td>
+                                        <td>Permite registrar los tipos de viaje con datos como Id y descripción del
+                                            tipo de viaje. A través de
+                                            opción guardar.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-002</td>
+                                        <td>Consultar tipo viaje</td>
+                                        <td>Permite consultar la información de los tipos de viaje registrados, por el
+                                            Id.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                        <td>RU-001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-003</td>
+                                        <td>Modificar tipo viaje</td>
+                                        <td>Permite modificar la información del tipo de viaje a excepción de id,
+                                            utilizando la opción guardar.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-004</td>
+                                        <td>Borrar tipo viaje</td>
+                                        <td>Permite Borrar la información de un tipo viaje, con verificación y
+                                            validación que no existe de
+                                            información dependiente</td>
+                                        <td>Administrador</td>
+                                        <td>RU-001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-005</td>
+                                        <td>Salir de Gestión de tipo viaje</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-006</td>
+                                        <td>Crear viajes</td>
+                                        <td>Permite registrar los viajes con datos como Id, descripción, fecha_inicio,
+                                            fecha_fin, presupuesto,
+                                            numero_personas, preferencias del viaje. A través de opción guardar.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-002</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-007</td>
+                                        <td>Consultar Viajes</td>
+                                        <td>Permite consultar los viajes registrados, mostrando detalles como id,
+                                            destino, y presupuesto.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-002</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-008</td>
+                                        <td>Modificar Viajes</td>
+                                        <td>Permite actualizar la información de un viaje existente, como destino,
+                                            fechas, y presupuesto.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-002</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-009</td>
+                                        <td>Borrar Viajes</td>
+                                        <td>Permite Borrar la información de un viaje, con el Id</td>
+                                        <td>Administrador</td>
+                                        <td>RU-002</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-010</td>
+                                        <td>Salir de Gestión de Viajes</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-002</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-011</td>
+                                        <td>Crear Tipo transporte</td>
+                                        <td>Permite registrar nuevos tipos de transporte, ingresando datos como id y
+                                            descripción.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-003</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-012</td>
+                                        <td>Consultar Tipo transporte</td>
+                                        <td>Permite consultar los tipos de transporte registrados, mostrando id y
+                                            descripción.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                        <td>RU-003</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-013</td>
+                                        <td>Modificar Tipo transporte</td>
+                                        <td>Permite actualizar los detalles de un tipo de transporte, como nombre y
+                                            descripción.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-003</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-014</td>
+                                        <td>Borrar Tipo transporte</td>
+                                        <td>Permite borrar un tipo de transporte, verificando que no tenga información
+                                            dependiente.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-003</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-015</td>
+                                        <td>Salir de Gestión de Tipo transporte</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-003</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-016</td>
+                                        <td>Crear Transporte</td>
+                                        <td>Permite registrar un transporte con datos como id, tipo_transporte,
+                                            fecha_salida, fecha_llegada, y
+                                            costo_transporte.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-004</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-017</td>
+                                        <td>Consultar Transporte</td>
+                                        <td>Permite ver los detalles de transportes registrados, incluyendo
+                                            tipo_transporte, fechas y costo.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-004</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-018</td>
+                                        <td>Modificar Transporte</td>
+                                        <td>Permite actualizar los datos de un transporte, como tipo_transporte, fechas,
+                                            y costo.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-004</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-019</td>
+                                        <td>Borrar Transporte</td>
+                                        <td>Permite borrar un transporte registrado, asegurándose de que no tenga
+                                            dependencias.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-004</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-020</td>
+                                        <td>Salir de Gestión de Transporte</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-004</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-021</td>
+                                        <td>Crear Departamento</td>
+                                        <td>Permite registrar nuevos departamentos ingresando datos como id_departamento
+                                            y nombre_departamento.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-005</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-022</td>
+                                        <td>Consultar Departamento</td>
+                                        <td>Permite ver los departamentos registrados, mostrando id_departamento y
+                                            nombre_departamento.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-005</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-023</td>
+                                        <td>Modificar Departamento</td>
+                                        <td>Permite actualizar los detalles de un departamento, como
+                                            nombre_departamento.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-005</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-024</td>
+                                        <td>Borrar departamento</td>
+                                        <td>Permite borrar un departamento, validando que no haya datos relacionados.
+                                        </td>
+                                        <td>Administrador</td>
+                                        <td>RU-005</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-025</td>
+                                        <td>Salir de Gestión de Departamento</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-005</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-026</td>
+                                        <td>Crear Ciudad</td>
+                                        <td>Permite registrar nuevas ciudades ingresando datos como id_ciudad,
+                                            nombre_ciudad, y id_departamento.
+                                        </td>
+                                        <td>Administrador</td>
+                                        <td>RU-006</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-027</td>
+                                        <td>Consultar Ciudad</td>
+                                        <td>Permite consultar las ciudades registradas, mostrando detalles como
+                                            id_ciudad, nombre_ciudad, y su
+                                            departamento asociado.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-006</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-028</td>
+                                        <td>Modificar Ciudad</td>
+                                        <td>Permite actualizar los datos de una ciudad registrada, como nombre_ciudad o
+                                            su departamento asociado.
+                                        </td>
+                                        <td>Administrador</td>
+                                        <td>RU-006</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-029</td>
+                                        <td>Borrar ciudad</td>
+                                        <td>Permite eliminar una ciudad registrada, validando que no existan
+                                            dependencias asociadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-006</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-030</td>
+                                        <td>Salir de Gestión de Ciudad</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-006</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-031</td>
+                                        <td>Crear Localidad</td>
+                                        <td>Permite registrar localidades con datos como id_localidad, nombre_localidad,
+                                            y su ciudad asociada
+                                            (id_ciudad).</td>
+                                        <td>Administrador</td>
+                                        <td>RU-007</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-032</td>
+                                        <td>Consultar Localidad</td>
+                                        <td>Permite consultar las localidades registradas, mostrando detalles como
+                                            id_localidad, nombre_localidad, y
+                                            su ciudad asociada.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-007</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-033</td>
+                                        <td>Modificar Localidad</td>
+                                        <td>Permite actualizar los datos de una localidad registrada, como
+                                            nombre_localidad y su ciudad asociada.
+                                        </td>
+                                        <td>Administrador</td>
+                                        <td>RU-007</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-034</td>
+                                        <td>Borrar localidad</td>
+                                        <td>Permite eliminar una localidad registrada, asegurando que no existan
+                                            dependencias asociadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-007</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-035</td>
+                                        <td>Salir de Gestión de Localidad</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-007</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-036</td>
+                                        <td>Crear Tipo alojamiento</td>
+                                        <td>Permite registrar tipos de alojamiento con datos como id_tipo_alojamiento y
+                                            descripción_tipo_alojamiento.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-008</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-037</td>
+                                        <td>Consultar Tipo alojamiento</td>
+                                        <td>Permite consultar los tipos de alojamiento registrados, mostrando detalles
+                                            como id_tipo_alojamiento y su
+                                            descripción.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-008</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-038</td>
+                                        <td>Modificar Tipo alojamiento</td>
+                                        <td>Permite actualizar los detalles de un tipo de alojamiento registrado, como
+                                            su descripción.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-008</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-039</td>
+                                        <td>Borrar tipo alojamiento</td>
+                                        <td>Permite borrar un tipo de alojamiento registrado, validando que no existan
+                                            dependencias relacionadas.
+                                        </td>
+                                        <td>Administrador</td>
+                                        <td>RU-008</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-040</td>
+                                        <td>Salir de Gestión de Tipo alojamiento</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-008</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-041</td>
+                                        <td>Crear Alojamiento</td>
+                                        <td>Permite registrar alojamientos con datos como id_alojamiento,
+                                            nombre_alojamiento, calificación,
+                                            costo_noche, y servicios_incluidos.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-009</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-042</td>
+                                        <td>Consultar Alojamiento</td>
+                                        <td>Permite consultar alojamientos registrados, mostrando detalles como
+                                            nombre_alojamiento, calificación, y
+                                            costo_noche.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-009</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-043</td>
+                                        <td>Modificar Alojamiento</td>
+                                        <td>Permite actualizar los datos de un alojamiento registrado, como
+                                            nombre_alojamiento, calificación, o
+                                            servicios_incluidos.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-009</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-044</td>
+                                        <td>Borrar alojamiento</td>
+                                        <td>Permite borrar un alojamiento registrado, validando que no existan
+                                            dependencias relacionadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-009</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-045</td>
+                                        <td>Salir de Gestión de Alojamiento</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-009</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-046</td>
+                                        <td>Crear Tipo tour</td>
+                                        <td>Permite registrar nuevos tipos de tour con datos como id_tipo_tour y
+                                            descripción_tipo_tour.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-010</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-047</td>
+                                        <td>Consultar Tipo tour</td>
+                                        <td>Permite consultar los tipos de tour registrados, mostrando detalles como
+                                            id_tipo_tour y su descripción.
+                                        </td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-010</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-048</td>
+                                        <td>Modificar Tipo tour</td>
+                                        <td>Permite actualizar los detalles de un tipo de tour registrado, como su
+                                            descripción.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-010</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-049</td>
+                                        <td>Borrar tipo tour</td>
+                                        <td>Permite eliminar un tipo de tour registrado, validando que no existan
+                                            dependencias relacionadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-010</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-050</td>
+                                        <td>Salir de Gestión de Tipo tour</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-010</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-051</td>
+                                        <td>Crear Tour</td>
+                                        <td>Permite registrar tours con datos como id_tour, nombre_tour, duración,
+                                            actividades_incluidas, y costo_tour.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-011</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-052</td>
+                                        <td>Consultar Tour</td>
+                                        <td>Permite consultar los tours registrados, mostrando detalles como
+                                            nombre_tour, duración, y costo_tour.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-011</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-053</td>
+                                        <td>Modificar Tour</td>
+                                        <td>Permite actualizar los datos de un tour registrado, como nombre_tour,
+                                            duración, y actividades_incluidas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-011</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-054</td>
+                                        <td>Borrar tour</td>
+                                        <td>Permite borrar un tour registrado, asegurándose de que no existan
+                                            dependencias relacionadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-011</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-055</td>
+                                        <td>Salir de Gestión de Tour</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-011</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-056</td>
+                                        <td>Crear Clientes</td>
+                                        <td>Permite registrar nuevos clientes ingresando datos como id_cliente,
+                                            nombre_cliente, apellido_cliente, correo_cliente, y preferencias_viaje.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-012</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-057</td>
+                                        <td>Consultar Clientes</td>
+                                        <td>Permite consultar la información de los clientes registrados, mostrando
+                                            detalles como nombre_cliente y correo_cliente.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-012</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-058</td>
+                                        <td>Modificar Clientes</td>
+                                        <td>Permite actualizar los datos de un cliente registrado, como nombre_cliente,
+                                            correo_cliente, o preferencias_viaje.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-012</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-059</td>
+                                        <td>Borrar clientes</td>
+                                        <td>Permite borrar un cliente registrado, validando que no existan dependencias
+                                            asociadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-012</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-060</td>
+                                        <td>Salir de Gestión de Clientes</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-012</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-061</td>
+                                        <td>Crear Tipo cliente</td>
+                                        <td>Permite registrar nuevos tipos de cliente ingresando datos como
+                                            id_tipo_cliente y descripción_tipo_cliente.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-013</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-062</td>
+                                        <td>Consultar Tipo cliente</td>
+                                        <td>Permite consultar los tipos de cliente registrados, mostrando detalles como
+                                            id_tipo_cliente y su descripción.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-013</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-063</td>
+                                        <td>Modificar Tipo cliente</td>
+                                        <td>Permite actualizar los detalles de un tipo de cliente registrado, como su
+                                            descripción.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-013</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-064</td>
+                                        <td>Borrar tipo cliente</td>
+                                        <td>Permite borrar un tipo de cliente registrado, asegurándose de que no existan
+                                            dependencias relacionadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-013</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-065</td>
+                                        <td>Salir de Gestión de Tipo cliente</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-013</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-066</td>
+                                        <td>Crear Reserva</td>
+                                        <td>Permite registrar reservas con datos como id_reserva, id_cliente, id_viaje,
+                                            fecha_reserva, y estado_pago.</td>
+                                        <td>Administrador, Usuario</td>
+                                        <td>RU-014</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-067</td>
+                                        <td>Consultar Reserva</td>
+                                        <td>Permite consultar las reservas registradas, mostrando detalles como
+                                            id_cliente, fecha_reserva, y estado_pago.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-014</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-068</td>
+                                        <td>Modificar Reserva</td>
+                                        <td>Permite actualizar los datos de una reserva registrada, como id_cliente,
+                                            id_viaje, y fecha_reserva.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-014</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-069</td>
+                                        <td>Borrar reserva</td>
+                                        <td>Permite borrar una reserva registrada, validando que no existan dependencias
+                                            asociadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-014</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-070</td>
+                                        <td>Salir de Gestión de Reserva</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-014</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-071</td>
+                                        <td>Crear Registro de alojamiento</td>
+                                        <td>Permite registrar un nuevo registro de alojamiento con datos como
+                                            id_registro_alojamiento, id_alojamiento, fecha_check_in, fecha_check_out, y
+                                            costo_alojamiento.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-015</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-072</td>
+                                        <td>Consultar Registro de alojamiento</td>
+                                        <td>Permite consultar registros de alojamiento registrados, mostrando detalles
+                                            como id_alojamiento, fechas, y costo_alojamiento.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-015</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-073</td>
+                                        <td>Modificar Registro de alojamiento</td>
+                                        <td>Permite actualizar los datos de un registro de alojamiento, como
+                                            fecha_check_in, fecha_check_out, o costo_alojamiento.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-015</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-074</td>
+                                        <td>Borrar registro de alojamiento</td>
+                                        <td>Permite borrar un registro de alojamiento registrado, validando que no
+                                            existan dependencias asociadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-015</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-075</td>
+                                        <td>Salir de Gestión de Registro de alojamiento</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-015</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-076</td>
+                                        <td>Crear Tipo producto</td>
+                                        <td>Permite registrar nuevos tipos de producto ingresando datos como
+                                            id_tipo_producto y descripción_tipo_producto.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-077</td>
+                                        <td>Consultar Tipo producto</td>
+                                        <td>Permite consultar los tipos de producto registrados, mostrando detalles como
+                                            id_tipo_producto y su descripción.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-078</td>
+                                        <td>Modificar Tipo producto</td>
+                                        <td>Permite actualizar los detalles de un tipo de producto registrado, como su
+                                            descripción.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-079</td>
+                                        <td>Borrar tipo producto</td>
+                                        <td>Permite borrar un tipo de producto registrado, validando que no existan
+                                            dependencias asociadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-080</td>
+                                        <td>Salir de Gestión de Tipo producto</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-081</td>
+                                        <td>Crear Producto</td>
+                                        <td>Permite registrar nuevos productos ingresando datos como id_producto,
+                                            nombre_producto, descripción_producto, y costo_producto.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-082</td>
+                                        <td>Consultar Producto</td>
+                                        <td>Permite consultar los productos registrados, mostrando detalles como
+                                            nombre_producto, descripción_producto, y costo_producto.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-083</td>
+                                        <td>Modificar Producto</td>
+                                        <td>Permite actualizar los datos de un producto registrado, como
+                                            nombre_producto, descripción_producto, o costo_producto.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-084</td>
+                                        <td>Borrar gestión de producto</td>
+                                        <td>Permite borrar un producto registrado, asegurándose de que no existan
+                                            dependencias relacionadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-085</td>
+                                        <td>Salir de Gestión de Producto</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-086</td>
+                                        <td>Crear Tipo pago</td>
+                                        <td>Permite registrar nuevos tipos de pago ingresando datos como id_tipo_pago y
+                                            descripción_tipo_pago.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-018</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-087</td>
+                                        <td>Consultar Tipo pago</td>
+                                        <td>Permite consultar los tipos de pago registrados, mostrando detalles como
+                                            id_tipo_pago y su descripción.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-018</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-088</td>
+                                        <td>Modificar Tipo pago</td>
+                                        <td>Permite actualizar los detalles de un tipo de pago registrado, como su
+                                            descripción.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-018</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-089</td>
+                                        <td>Borrar tipo pago</td>
+                                        <td>Permite borrar un tipo de pago registrado, validando que no existan
+                                            dependencias asociadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-018</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-090</td>
+                                        <td>Salir de Gestión de Tipo pago</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-018</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-091</td>
+                                        <td>Crear Pago</td>
+                                        <td>Permite registrar un pago con datos como id_pago, id_reserva, monto_total,
+                                            fecha_pago, y método_pago.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-019</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-092</td>
+                                        <td>Consultar Pago</td>
+                                        <td>Permite consultar los pagos registrados, mostrando detalles como
+                                            monto_total, fecha_pago, y método_pago.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-019</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-093</td>
+                                        <td>Modificar Pago</td>
+                                        <td>Permite actualizar los datos de un pago registrado, como monto_total o
+                                            método_pago.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-019</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-094</td>
+                                        <td>Borrar pago</td>
+                                        <td>Permite borrar un pago registrado, validando que no existan dependencias
+                                            relacionadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-019</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-095</td>
+                                        <td>Salir de Gestión de Pago</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-019</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-096</td>
+                                        <td>Crear Actividades</td>
+                                        <td>Permite registrar nuevas actividades con datos como id_actividad,
+                                            nombre_actividad, descripción_actividad, duración, y costo_actividad.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-097</td>
+                                        <td>Consultar Actividades</td>
+                                        <td>Permite consultar las actividades registradas, mostrando detalles como
+                                            nombre_actividad, duración, y costo_actividad.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-098</td>
+                                        <td>Modificar Actividades</td>
+                                        <td>Permite actualizar los datos de una actividad registrada, como
+                                            nombre_actividad, descripción_actividad, o duración.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-099</td>
+                                        <td>Borrar actividades</td>
+                                        <td>Permite borrar una actividad registrada, asegurándose de que no existan
+                                            dependencias asociadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-100</td>
+                                        <td>Salir de Gestión de Actividades</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-101</td>
+                                        <td>Crear Comidas</td>
+                                        <td>Permite registrar nuevos tipos de comida con datos como id_comida,
+                                            tipo_comida, descripción_comida, costo_comida, y horario_disponible.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-021</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-102</td>
+                                        <td>Consultar Comidas</td>
+                                        <td>Permite consultar los tipos de comida registrados, mostrando detalles como
+                                            tipo_comida, costo_comida, y horario_disponible.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-021</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-103</td>
+                                        <td>Modificar Comidas</td>
+                                        <td>Permite actualizar los datos de un tipo de comida registrada, como
+                                            tipo_comida, costo_comida, o horario_disponible.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-021</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-104</td>
+                                        <td>Borrar comidas</td>
+                                        <td>Permite borrar un tipo de comida registrada, validando que no existan
+                                            dependencias relacionadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-021</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-105</td>
+                                        <td>Salir de Gestión de Comidas</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-021</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-106</td>
+                                        <td>Crear Guía turístico</td>
+                                        <td>Permite registrar nuevos guías turísticos con datos como id_guía,
+                                            nombre_guía, especialidad, contacto_guía, y costo_guía.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-107</td>
+                                        <td>Consultar Guía turístico</td>
+                                        <td>Permite consultar los guías turísticos registrados, mostrando detalles como
+                                            nombre_guía, especialidad, y contacto_guía.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-108</td>
+                                        <td>Modificar Guía turístico</td>
+                                        <td>Permite actualizar los datos de un guía turístico registrado, como
+                                            nombre_guía, especialidad, o contacto_guía.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-109</td>
+                                        <td>Borrar guía turístico</td>
+                                        <td>Permite borrar un guía turístico registrado, validando que no existan
+                                            dependencias asociadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-110</td>
+                                        <td>Salir de Gestión de Guía turístico</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-111</td>
+                                        <td>Crear Paquetes turísticos</td>
+                                        <td>Permite registrar nuevos paquetes turísticos ingresando datos como
+                                            id_paquete, nombre_paquete, descripcion_paquete, precio_paquete, y
+                                            actividades_incluidas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-112</td>
+                                        <td>Consultar Paquetes turísticos</td>
+                                        <td>Permite consultar los paquetes turísticos registrados, mostrando detalles
+                                            como nombre_paquete, precio_paquete, y actividades_incluidas.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-113</td>
+                                        <td>Modificar Paquetes turísticos</td>
+                                        <td>Permite actualizar los datos de un paquete turístico registrado, como
+                                            nombre_paquete, precio_paquete, o actividades_incluidas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-114</td>
+                                        <td>Borrar paquetes turísticos</td>
+                                        <td>Permite borrar un paquete turístico registrado, asegurándose de que no
+                                            existan dependencias relacionadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-115</td>
+                                        <td>Salir de Gestión de Paquetes turísticos</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-116</td>
+                                        <td>Crear Seguros de viaje</td>
+                                        <td>Permite registrar nuevos seguros de viaje con datos como id_seguro,
+                                            tipo_seguro, cobertura_seguro, costo_seguro, y vigencia_seguro.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-117</td>
+                                        <td>Consultar Seguros de viaje</td>
+                                        <td>Permite consultar los seguros de viaje registrados, mostrando detalles como
+                                            tipo_seguro, cobertura_seguro, y costo_seguro.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-118</td>
+                                        <td>Modificar Seguros de viaje</td>
+                                        <td>Permite actualizar los datos de un seguro de viaje registrado, como
+                                            tipo_seguro, cobertura_seguro, o costo_seguro.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-119</td>
+                                        <td>Borrar seguros de viaje</td>
+                                        <td>Permite borrar un seguro de viaje registrado, asegurándose de que no existan
+                                            dependencias asociadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-120</td>
+                                        <td>Salir de Gestión de Seguros de viaje</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-121</td>
+                                        <td>Crear Opiniones/Valoraciones</td>
+                                        <td>Permite registrar opiniones o valoraciones de los clientes con datos como
+                                            id_opinión, id_cliente, id_viaje, puntuación, y comentarios.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-025</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-122</td>
+                                        <td>Consultar Opiniones/Valoraciones</td>
+                                        <td>Permite consultar las opiniones o valoraciones registradas, mostrando
+                                            detalles como puntuación, comentarios, y fecha.</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-025</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-123</td>
+                                        <td>Modificar Opiniones/Valoraciones</td>
+                                        <td>Permite actualizar los datos de una opinión o valoración registrada, como
+                                            puntuación o comentarios.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-025</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-124</td>
+                                        <td>Borrar opiniones/valoraciones</td>
+                                        <td>Permite borrar una opinión o valoración registrada, validando que no existan
+                                            dependencias relacionadas.</td>
+                                        <td>Administrador</td>
+                                        <td>RU-025</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-125</td>
+                                        <td>Salir de Gestión de Opiniones/Valoraciones</td>
+                                        <td>Permite cerrar el formulario</td>
+                                        <td>Administrador, Gerente, Usuario</td>
+                                        <td>RU-025</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-126</td>
+                                        <td>Informe de los tipos de viaje registrados</td>
+                                        <td>El sistema mostrara el informe de los tipos de viajes registrado permitiendo
+                                            visualizar la información por código de tipo de viaje.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                        <td>RU-026</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-127</td>
+                                        <td>Informe de tipos de alojamiento disponibles</td>
+                                        <td>El sistema mostrara el informe de los tipos de alojamiento disponible
+                                            registrado permitiendo visualizar la información por código de tipo de
+                                            alojamiento.</td>
+                                        <td>Usuario, Gerente, Administrador</td>
+                                        <td>RU-026</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-128</td>
+                                        <td>Informe de los tipos de tours disponibles</td>
+                                        <td>El sistema mostrara el informe de los tipos de tours disponibles registrado
+                                            permitiendo visualizar la información por código de tipo de tours.</td>
+                                        <td>Administrador, Usuario, Gerente</td>
+                                        <td>RU-026</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-129</td>
+                                        <td>Informe de reserva</td>
+                                        <td>El sistema mostrara el informe de las reservas disponible registrado
+                                            permitiendo visualizar la información por código de reserva.</td>
+                                        <td>Administrador, Usuario, Gerente</td>
+                                        <td>RU-026</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-130</td>
+                                        <td>Consulta de Opiniones y Valoraciones de Clientes</td>
+                                        <td>Permite consultar las Opiniones y valoraciones de los clientes registrado en
+                                            el sistema.</td>
+                                        <td>Administrador, Usuario, Gerente</td>
+                                        <td>RU-027</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-131</td>
+                                        <td>Consulta de Actividades Programadas</td>
+                                        <td>Permite consultar las actividades programadas registrado en el sistema.</td>
+                                        <td>Administrador, Usuario, Gerente</td>
+                                        <td>RU-027</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-132</td>
+                                        <td>Consulta de Servicios Adicionales Adquiridos</td>
+                                        <td>Permite consultar los servicios adicionales adquiridos registrado en el
+                                            sistema.</td>
+                                        <td>Administrador, Usuario, Gerente</td>
+                                        <td>RU-027</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RF-133</td>
+                                        <td>Consulta de reservas</td>
+                                        <td>Permite consultar las reservas registrado en el sistema.</td>
+                                        <td>Administrador, Usuario, Gerente</td>
+                                        <td>RU-027</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <a href="./segundo.html">
+                                <button class="btn btn-primary">Regresar</button>
+                            </a>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">Juan Carlos Martinez M, Paul Furnieles, Juan Esteban
+                    chavarria</span>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
