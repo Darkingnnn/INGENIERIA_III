@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Viajes Pluss</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background: #fafafa;
+        }
+
+        .panel-carrusel {
+            border: 2px solid #c9c9c9;
+            background: #fff;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-item h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* flechas personalizadas */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            display: none;
+            /* oculta las flechas default */
+        }
+
+        .carousel-control-prev i,
+        .carousel-control-next i {
+            font-size: 2rem;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" style="min-height:70px;">
+        <div class="container">
+            <a href="./index.html" class="navbar-brand fw-bold">Viajes Pluss</a>
+            <form class="d-none d-lg-flex ms-auto" style="max-width:350px; width:100%;">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input class="form-control" type="search" placeholder="Buscar">
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <main class="container py-2">
+        <center>
+            <h2>Gestión del Cambio</h2>
+        </center>
+        <table border="1" cellspacing="0" cellpadding="6"
+            style="border-collapse: collapse; width: 100%; text-align: center; font-family: Arial; font-size: 14px;">
+            <thead style="background-color: #007BFF; color: white;">
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha Solicitud</th>
+                    <th>Historia Afectada</th>
+                    <th>Motivo del Cambio</th>
+                    <th>Archivos Impactados</th>
+                    <th>Tiempo Estimado (h)</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CAMB01</td>
+                    <td>5/05/2025</td>
+                    <td>HU01 - Inicio de sesión</td>
+                    <td>Agregar validación de contraseña segura (mín. 8 caracteres, mayúscula y número)</td>
+                    <td>login.php, control.php</td>
+                    <td>2</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB02</td>
+                    <td>6/05/2025</td>
+                    <td>HU03 - Registro</td>
+                    <td>Implementar encriptación SHA1 para contraseñas</td>
+                    <td>control.php</td>
+                    <td>1</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB03</td>
+                    <td>7/05/2025</td>
+                    <td>HU02 - Administración</td>
+                    <td>Soft delete de clientes con campo estado</td>
+                    <td>control.php, modelo.php</td>
+                    <td>3</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB04</td>
+                    <td>8/05/2025</td>
+                    <td>HU01 - Inicio de sesión</td>
+                    <td>Añadir opción para mostrar/ocultar contraseña en el login</td>
+                    <td>login.php</td>
+                    <td>1.5</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB05</td>
+                    <td>9/05/2025</td>
+                    <td>HU03 - Registro</td>
+                    <td>Validación del formato correcto de correo electrónico</td>
+                    <td>modelo.php</td>
+                    <td>1</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB06</td>
+                    <td>10/05/2025</td>
+                    <td>HU04 - Diseño</td>
+                    <td>Mejorar estilos visuales del formulario de registro</td>
+                    <td>registro.css</td>
+                    <td>2</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB07</td>
+                    <td>11/05/2025</td>
+                    <td>HU02 - Administración</td>
+                    <td>Redirección automática según el rol del usuario (cliente/admin)</td>
+                    <td>control.php</td>
+                    <td>1</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB08</td>
+                    <td>12/05/2025</td>
+                    <td>HU03 - Registro</td>
+                    <td>Verificación de unicidad en el campo documento durante el registro</td>
+                    <td>control.php, modelo.php</td>
+                    <td>2</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB09</td>
+                    <td>13/05/2025</td>
+                    <td>HU05 - Edición Clientes</td>
+                    <td>Formulario de edición con validación completa de campos</td>
+                    <td>cliente.php, control.php</td>
+                    <td>4</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB10</td>
+                    <td>14/05/2025</td>
+                    <td>HU06 - Panel de Control</td>
+                    <td>Implementar menú lateral (sidebar) y modo oscuro para administrador</td>
+                    <td>menu.php, principal.php</td>
+                    <td>1</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB11</td>
+                    <td>15/05/2025</td>
+                    <td>HU07 - Listado de Clientes</td>
+                    <td>Mejorar tabla con acciones (editar, inactivar) y visualización del estado</td>
+                    <td>cliente.php</td>
+                    <td>3</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB12</td>
+                    <td>16/05/2025</td>
+                    <td>HU03 - Registro</td>
+                    <td>Medidor de fortaleza de contraseña en tiempo real</td>
+                    <td>registrar.php</td>
+                    <td>2</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB13</td>
+                    <td>17/05/2025</td>
+                    <td>HU05 - Seguridad</td>
+                    <td>Confirmación emergente antes de inactivar cliente</td>
+                    <td>cliente.php</td>
+                    <td>1.5</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB14</td>
+                    <td>18/05/2025</td>
+                    <td>HU09 - Notificaciones</td>
+                    <td>Añadir sistema de notificaciones tipo toast para feedback visual</td>
+                    <td>cliente.php</td>
+                    <td>2</td>
+                    <td>Aprobado</td>
+                </tr>
+                <tr>
+                    <td>CAMB15</td>
+                    <td>20/05/2025</td>
+                    <td>HU10 - Sesiones</td>
+                    <td>Optimización de cierre de sesión y control de redirección</td>
+                    <td>principal.php, cerrar.php</td>
+                    <td>2</td>
+                    <td>Aprobado</td>
+                </tr>
+            </tbody>
+        </table>
+
+        </div><br>
+        <center><a href="../tercero.html">
+                <button class="btn btn-primary">Regresar</button>
+            </a></center>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">Juan Carlos Martinez M, Paul Furnieles, Juan Esteban
+                    chavarria</span>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
